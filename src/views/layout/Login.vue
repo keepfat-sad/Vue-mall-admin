@@ -1,31 +1,49 @@
 <template>
   <div class="login">
-      <a-form-model class="login-form"
-                ref="loginForm" :model="loginForm" :rules="rules" v-bind="layout">
+    <div class="top">
+      <transition name="word">
+      <p>生鲜商品管理页</p>
+      </transition>
+    </div>
+     <div class="form">
+        <a-form-model class="login-form"
+                ref="loginForm" :model="loginForm"
+                :rules="rules" v-bind="layout">
        <a-form-model-item has-feedback label="邮箱" prop="email">
       <a-input v-model="loginForm.email" />
     </a-form-model-item>
     <a-form-model-item has-feedback label="密码" prop="password">
       <a-input v-model="loginForm.password" type="password" autocomplete="off" />
     </a-form-model-item>
-
     <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
       <a-button type="primary" @click="register"> 注册 </a-button>
         <a-button
           type="primary"
-          style="margin-left: 10px; background-color: #EE6363"
+          style="background-color: #EE6363;margin:5px"
           @click="forgetWord"
         >
           找回密码
         </a-button>
-      <a-button style="margin-left: 10px" @click="resetForm('loginForm')">
+      <a-button  @click="resetForm('loginForm')">
         重置
       </a-button>
-      <a-button type="primary" @click="submitForm('loginForm')" style="margin-left: 87px">
-        提交
+      <a-button
+        type="primary"
+        @click="submitForm('loginForm')"
+        style="marginLeft:80px;marginTop:30px">
+        登录
       </a-button>
     </a-form-model-item>
-  </a-form-model>
+        </a-form-model>
+     </div>
+     <div class="title">
+       <div class="left">
+         生鲜商品商家管理
+       </div>
+       <div class="right">
+         @keepfat享有最终解释权
+       </div>
+     </div>
   </div>
 </template>
 <script>
