@@ -106,6 +106,26 @@ const routes = [
       hidden: true,
     },
   },
+  {
+    path: '/category',
+    name: 'Category',
+    component: Home,
+    meta: {
+      title: '类目',
+      hidden: false,
+      icon: 'project',
+    },
+    children: [{
+      path: 'list',
+      name: 'List',
+      meta: {
+        title: '类目列表',
+        icon: 'unordered-list',
+        hidden: false,
+      },
+      component: () => import('../views/page/category.vue'),
+    }],
+  },
 ];
 
 const router = new VueRouter({
