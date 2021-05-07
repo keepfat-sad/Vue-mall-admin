@@ -1,15 +1,77 @@
-.register{
+.register {
     overflow: hidden;
-    .registerForm{
-        max-width: 500px ;
+
+    .registerForm {
+        max-width: 500px;
         margin: 50px auto;
-        border: 1px solid #eee;
         padding: 24px 20px 0px 20px;
     }
-    .getCode{
+
+    .getCode {
         margin: -40px 0 -10px 0;
     }
-    .submitFrom{
+
+    .submitFrom {
         margin-top: -30px;
+    }
+}
+
+.top {
+    height: 150px;
+    background-color: #3d63eed1;
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    box-shadow: 4px 10px 5px #7580b6;
+
+    .text {
+        font-size: 30px;
+        line-height: 150px;
+        color: #fff;
+        animation: swing .9s;
+    }
+
+    .right {
+        height: 100%;
+
+        img {
+            height: 100%;
+            animation: backInDown .9s;
+        }
+    }
+}
+
+.wrapper {
+    background-color: #86c7fe;
+    height: 100vh;
+
+    .bottom {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .leftImg {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        left: 25%;
+        top: 40%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            animation: zoomInDown .9s;
+        }
+    }
+
+}
+
+@keyframes word {
+    0% {
+        transform: translateY(-200px);
+    }
+
+    100% {
+        transform: translateY(60px);
     }
 }

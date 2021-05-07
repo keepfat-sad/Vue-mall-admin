@@ -119,6 +119,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-@import url('~@/assets/css/login.less');
+<style lang="less" scoped>
+  @import url('~@/assets/css/login.less');
 </style>

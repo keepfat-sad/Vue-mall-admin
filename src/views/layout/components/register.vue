@@ -1,4 +1,11 @@
 <template>
+<div class="wrapper">
+  <div class="top">
+    <div class="text">欢迎注册!生鲜商品管理页</div>
+    <div class="right">
+      <img :src="bear" alt="" >
+    </div>
+  </div>
   <div class="register">
     <a-form :form="form" @submit="handleSubmit" class="registerForm">
       <a-form-item v-bind="formItemLayout" label="邮箱">
@@ -126,15 +133,28 @@
       </a-form-item>
     </a-form>
   </div>
+  <div class="bottom">
+    关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机页面 | 友情链接 | 销售联盟 | 生鲜社区 | 商品公益 | English Site
+    <div>@2021-04-30</div>
+  </div>
+  <div class="leftImg">
+    <img :src="faceBoy" alt="">
+  </div>
+</div>
+
 </template>
 
 <script>
 import api from '@/api/user';
+import bear from '@/assets/bear.png';
+import faceBoy from '@/assets/faceBoy.png';
 
 export default {
   data() {
     return {
       confirmDirty: false,
+      bear,
+      faceBoy,
       autoCompleteResult: [],
       formItemLayout: {
         labelCol: {
@@ -223,6 +243,6 @@ export default {
   },
 };
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
 @import url("~@/assets/css/register.less");
 </style>

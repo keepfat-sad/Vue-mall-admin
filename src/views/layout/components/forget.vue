@@ -1,75 +1,85 @@
 <template>
-  <div class="form">
-    <a-form :form="form" @submit="handleSubmit" class="forgetForm">
-      <a-form-item v-bind="formItemLayout" label="邮箱">
-        <a-input
-          v-decorator="[
-            'email',
-            {
-              rules: [
-                {
-                  type: 'email',
-                  message: '请输入正确的邮箱',
-                },
-                {
-                  required: true,
-                  message: '请输入邮箱！',
-                },
-              ],
-            },
-          ]"
-        />
-      </a-form-item>
-      <a-form-item v-bind="formItemLayout" label="密码" has-feedback>
-        <a-input
-          v-decorator="[
-            'password',
-            {
-              rules: [
-                {
-                  required: true,
-                  message: '请输入密码！',
-                },
-              ],
-            },
-          ]"
-          type="password"
-        />
-      </a-form-item>
-      <a-form-item v-bind="formItemLayout" label="验证码">
-        <a-input
-          v-decorator="[
-            'code',
-            {
-              rules: [
-                {
-                  required: true,
-                  message: '请输入正确的验证码！',
-                },
-              ],
-            },
-          ]"
-          type="password"
-        />
-      </a-form-item>
-      <a-form-item v-bind="tailFormItemLayout" class="submitFrom">
-        <a-button type="primary" html-type="submit"> 提交 </a-button>
-        <a-button type="primary" style="margin-left: 10px" @click="login">
-          返回登录
-        </a-button>
-      </a-form-item>
-    </a-form>
+  <div class="wrapper">
+    <div class="top">
+      <div class="text">找回密码</div>
+      <div class="right">
+        <img :src="luckBear" alt="" />
+      </div>
+    </div>
+    <div class="form">
+      <a-form :form="form" @submit="handleSubmit" class="forgetForm">
+        <a-form-item v-bind="formItemLayout" label="邮箱">
+          <a-input
+            v-decorator="[
+              'email',
+              {
+                rules: [
+                  {
+                    type: 'email',
+                    message: '请输入正确的邮箱',
+                  },
+                  {
+                    required: true,
+                    message: '请输入邮箱！',
+                  },
+                ],
+              },
+            ]"
+          />
+        </a-form-item>
+        <a-form-item v-bind="formItemLayout" label="密码" has-feedback>
+          <a-input
+            v-decorator="[
+              'password',
+              {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入密码！',
+                  },
+                ],
+              },
+            ]"
+            type="password"
+          />
+        </a-form-item>
+        <a-form-item v-bind="formItemLayout" label="验证码">
+          <a-input
+            v-decorator="[
+              'code',
+              {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入正确的验证码！',
+                  },
+                ],
+              },
+            ]"
+            type="password"
+          />
+        </a-form-item>
+        <a-form-item v-bind="tailFormItemLayout" class="submitFrom">
+          <a-button type="primary" html-type="submit"> 提交 </a-button>
+          <a-button type="primary" style="margin-left: 10px" @click="login">
+            返回登录
+          </a-button>
+        </a-form-item>
+      </a-form>
+    </div>
   </div>
 </template>
 
 <script>
 import api from '@/api/user';
+import luckBear from '@/assets/luckBear.png';
 
 export default {
   data() {
     return {
       confirmDirty: false,
       autoCompleteResult: [],
+      luckBear,
       formItemLayout: {
         labelCol: {
           xs: { span: 24 },
@@ -118,6 +128,6 @@ export default {
   },
 };
 </script>
-<style lang="less">
-    @import url('~@/assets/css/forget.less');
+<style lang="less" scoped>
+@import url("~@/assets/css/forget.less");
 </style>

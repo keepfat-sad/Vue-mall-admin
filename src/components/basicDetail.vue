@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import categoryApi from '@/api/category';
+import Api from '@/api/category';
 
 export default {
   data() {
@@ -62,7 +62,7 @@ export default {
   },
   props: ['form'],
   created() {
-    categoryApi.list().then((res) => {
+    Api.list().then((res) => {
       this.categoryList = res.data;
     });
   },

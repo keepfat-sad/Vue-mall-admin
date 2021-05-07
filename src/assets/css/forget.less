@@ -3,7 +3,35 @@
     .forgetForm{
         max-width: 500px;
         margin: 100px auto;
-        border: 1px solid #eee;
         padding: 24px 60px 0px 0px;
     }
+}
+.top {
+    height: 150px;
+    background-color: #ceb3b3;
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    box-shadow: 4px 10px 5px #bc999f;
+    width: 100vw;
+    overflow: hidden;
+    .text {
+        font-size: 30px;
+        line-height: 150px;
+        animation: backInLeft .9s;
+        color: #fff;
+    }
+
+    .right {
+        height: 100%;
+
+        img {
+            height: 100%;
+            animation: backInRight .9s;
+        }
+    }
+}
+.wrapper {
+    background-color: #f9faec;
+    height: 100vh;
 }
